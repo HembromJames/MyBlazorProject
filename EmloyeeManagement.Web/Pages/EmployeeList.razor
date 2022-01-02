@@ -1,0 +1,23 @@
+﻿@page "/"
+@inherits EmployeeListBase
+@namespace EmployeeManagement.Web.Pages
+
+<h3>Selected Employees Count - @SelectedEmployeesCount</h3>
+<input type="checkbox" id="showFooter" @bind="ShowFooter" />
+<label for="showFooter">ShowFooter</label>
+<div class="card-deck">
+    @if (Employees == null)
+    {
+        <div class="spinner"></div>
+    }
+    else
+    {
+        @foreach (var employee in Employees)
+        {
+            <DisplayEmployee Employee="employee" ShowFooter="ShowFooter" OnEmployeeSelection="EmployeeSelectionChanged"
+                             OnEmployeeDeleted="EmployeeDeleted">
+            </DisplayEmployee>
+        }
+    }
+</div>
+

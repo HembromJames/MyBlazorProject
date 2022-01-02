@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\john.png" />
+    <None Include="wwwroot\images\mary.png" />
+    <None Include="wwwroot\images\nophoto.jpg" />
+    <None Include="wwwroot\images\sam.jpg" />
+    <None Include="wwwroot\images\sara.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.DataAnnotations.Validation" Version="3.2.0-rc1.20223.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorTutorial.Components\BlazorTutorial.Components.csproj" />
+    <ProjectReference Include="..\EmployeeManagement.Api\EmployeeManagement.Api.csproj" />
+    <ProjectReference Include="..\EmployeeManagement.Models\EmployeeManagement.Models.csproj" />
+  </ItemGroup>
+
+</Project>

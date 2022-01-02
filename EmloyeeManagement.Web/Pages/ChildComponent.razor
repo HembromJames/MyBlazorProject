@@ -1,0 +1,25 @@
+﻿<input id=@Id placeholder="default placeholder" @attributes="InputAttributes" />
+<h1 style="@ElementStyle; @H1Border">Child Component- @Counter</h1>
+<GrandChildComponent></GrandChildComponent>
+@code {
+    //[Parameter]
+    //public string Id { get; set; } = "Input";
+    //[Parameter]
+    //public string Required { get; set; } = "required";
+    //[Parameter]
+    //public string MaxLength { get; set; } = "25";
+    //[Parameter]
+    //public string Size { get; set; } = "25";
+    //[Parameter]
+    //public string Placeholder { get; set; } = "Child class component";
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
+    [Parameter]
+    public string Id { get; set; } = "Input";
+    [CascadingParameter(Name ="ColorStyle")]
+    public string ElementStyle { get; set; }
+    [CascadingParameter(Name ="BorderStyle")]
+    public string H1Border { get; set; }
+    [CascadingParameter(Name ="Counter")]
+    public int Counter { get; set; }
+}
